@@ -163,3 +163,39 @@ jobs:
         artifacts: "./build_linuxa64/onsyuri_${{  github.ref_name }}_arm64_linux"
         allowUpdates: "true"
         token: ${{ secrets.GITHUB_TOKEN }}
+
+  build_linuxr64:
+    runs-on: ubuntu-20.04
+    needs: install_thirdparty_build
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: get thirdparty_build cache
+      uses: actions/cache@v3
+      with: 
+        key: thirdparty_build
+        path: ./thirdparty
+    
+    - name: prepare enviroment
+      run: |
+        sudo apt-get update
+        sudo apt-get -y install crossbuild-essential-riscv64
+    
+    - name: build onsyuri_riscv64_linux
+      run: |
+        cd script 
+        export SKIP_PORTS=yes && bash ./cross_linuxr64.sh
+    
+    - name: prepare release
+      if: github.event_name == 'push'
+      run: |
+        cd build_linuxr64 
+        mv onsyuri onsyuri_${{  github.ref_name }}_riscv64_linux
+      
+    - name: create release
+      uses: ncipollo/release-action@v1
+      if: github.event_name == 'push'
+      with:
+        artifacts: "./build_linuxr64/onsyuri_${{  github.ref_name }}_riscv64_linux"
+        allowUpdates: "true"
+        token: ${{ secrets.GITHUB_TOKEN }}
