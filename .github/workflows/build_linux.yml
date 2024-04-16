@@ -185,7 +185,7 @@ jobs:
     - name: build onsyuri_riscv64_linux
       run: |
         cd script 
-        export SKIP_PORTS=yes && bash ./cross_linuxr64.sh
+        export SKIP_PORTS=no && bash ./cross_linuxr64.sh
     
     - name: prepare release
       if: github.event_name == 'push'
