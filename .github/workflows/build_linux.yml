@@ -167,7 +167,6 @@ jobs:
 
   build_linuxr64:
     runs-on: ubuntu-20.04
-    needs: install_thirdparty_build
     steps:
     - uses: actions/checkout@v3
     
