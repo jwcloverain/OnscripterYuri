@@ -3,6 +3,7 @@ name: RISC-V 64-bit Linux Build
 on:
   push:
     branches: [ "main" ]
+  workflow_dispatch:
   pull_request:
     branches: [ "main" ]
   release:
