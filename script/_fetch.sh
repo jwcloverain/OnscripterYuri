@@ -5,6 +5,7 @@ if ! [ -d $CMAKELISTS_PATH/thirdparty/build/arch_mingw64 ]; then mkdir -p $CMAKE
 if ! [ -d $CMAKELISTS_PATH/thirdparty/build/arch_linux32 ]; then mkdir -p $CMAKELISTS_PATH/thirdparty/build/arch_linux32; fi
 if ! [ -d $CMAKELISTS_PATH/thirdparty/build/arch_linux64 ]; then mkdir -p $CMAKELISTS_PATH/thirdparty/build/arch_linux64; fi
 if ! [ -d $CMAKELISTS_PATH/thirdparty/build/arch_linuxa64 ]; then mkdir -p $CMAKELISTS_PATH/thirdparty/build/arch_linuxa64; fi
+if ! [ -d $CMAKELISTS_PATH/thirdparty/build/arch_linuxr64 ]; then mkdir -p $CMAKELISTS_PATH/thirdparty/build/arch_linuxr64; fi
 if ! [ -d $CMAKELISTS_PATH/thirdparty/build/arch_wasm ]; then mkdir -p $CMAKELISTS_PATH/thirdparty/build/arch_wasm; fi
 
 # urlbase, name, outpath
