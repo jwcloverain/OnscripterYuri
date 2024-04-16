@@ -10,7 +10,7 @@ TARGETS=$@
 CC=riscv64-linux-gnu-gcc
 CXX=riscv64-linux-gnu-g++
 
-# SKIP_PORTS="yes"
+# SKIP_PORTS="no"
 # sdl2 has too many bindings to system, 
 # so just compile these libs in the target machine and link the build cache
 echo "## PORTBUILD_PATH=$PORTBUILD_PATH"
